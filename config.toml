@@ -1,36 +1,78 @@
-## -----------------------------------------------
-## Basic Configuration
-## -----------------------------------------------
+baseURL = "https://epqjamesportfolio.netlify.app"
+# title = "Hugo Themes"
+author = "Steve Francia"
+copyright = "Copyright © 2008–2019, Steve Francia and the lee.so; all rights reserved."
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+enableInlineShortcodes = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
 
-theme = "hugo-story"
+# ------------------------------
+theme = "hugo-paper"
+title = "Paper"
 
-## -----------------------------------------------
-## Publish
-## -----------------------------------------------
+[params]
+  color = 'linen'
 
-relativeURLs = "true"
-#canonifyURLs = "true"
+  twitter = 'nanxiaobei'
+  github = 'nanxiaobei'
+  instagram = 'nan.xiaobei'
 
-# Local
-baseURL = "/"
-publishDir = "public"
+  avatar = 'nanxiaobei@gmail.com'
+  name = 'Lee'
+  bio = 'Discover fresh context'
+# ------------------------------
 
-# Remote
-#baseURL = "https://caressofsteel.github.io/demos/hugo/hugo-story/"
-#publishDir = "//centos/sites/hugodev/hugostory/"
+# needed to  render raw HTML (e.g. <sub>, <sup>, <kbd>, <mark>)
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
+[menu]
 
-## -----------------------------------------------
-## Hugo Built-in Features
-## -----------------------------------------------
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 10
 
-disableKinds = ["taxonomy", "taxonomyTerm", "section"]
-# googleAnalytics = "your-google-analytics-id"
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
 
-## -----------------------------------------------
-## Site Parameters
-## -----------------------------------------------
+[privacy]
 
-[Params]
+  [privacy.vimeo]
+    disabled = false
+    simple = true
 
-[Params.social]
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+
+  [privacy.instagram]
+    disabled = false
+    simple = true
+
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true
+
+[services]
+
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true
